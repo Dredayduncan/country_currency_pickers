@@ -1,3 +1,6 @@
+## [3.0.0] - 05/02/2023
+* Example code updated with Material 3 design
+* Replaced deprecated code
 ## [2.0.0] - 04/14/2021
 * Migrated to null safety
 ## [1.1.0] - 04/26/2019
