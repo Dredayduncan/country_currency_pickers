@@ -34,6 +34,10 @@ class CountryPickerDialog extends StatefulWidget {
 
   final EdgeInsetsGeometry contentPadding;
 
+  /// Padding around the inset
+
+  final EdgeInsets? insetPadding;
+
   /// The semantic label of the dialog used by accessibility frameworks to
   /// announce screen transitions when the dialog is opened and closed.
   ///
@@ -83,6 +87,7 @@ class CountryPickerDialog extends StatefulWidget {
     this.title,
     this.titlePadding,
     this.contentPadding = const EdgeInsets.fromLTRB(0.0, 12.0, 0.0, 16.0),
+    this.insetPadding,
     this.semanticLabel,
     this.itemFilter,
     this.itemBuilder,
@@ -122,6 +127,7 @@ class SingleChoiceDialogState extends State<CountryPickerDialog> {
     return MyAlertDialog(
       title: _buildHeader(),
       contentPadding: widget.contentPadding,
+      insetPadding: widget.insetPadding,
       semanticLabel: widget.semanticLabel,
       content: _buildContent(context),
       isDividerEnabled: widget.isDividerEnabled,

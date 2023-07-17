@@ -15,6 +15,7 @@ class MyAlertDialog<T> extends StatelessWidget {
     this.titlePadding,
     this.content,
     this.contentPadding = const EdgeInsets.fromLTRB(24.0, 20.0, 24.0, 24.0),
+    this.insetPadding,
     this.actions,
     this.semanticLabel,
     this.divider = const Divider(
@@ -56,6 +57,11 @@ class MyAlertDialog<T> extends StatelessWidget {
   /// title, and padding of 24 pixels is provided on the left, right, and bottom
   /// to separate the content from the other edges of the dialog.
   final EdgeInsetsGeometry contentPadding;
+
+  /// Padding around the inset.
+  ///
+  /// If there is no content, the default inset padding will be used
+  final EdgeInsets? insetPadding;
 
   /// The (optional) set of actions that are displayed at the bottom of the
   /// dialog.
@@ -156,6 +162,6 @@ class MyAlertDialog<T> extends StatelessWidget {
       dialogChild =
           new Semantics(namesRoute: true, label: label, child: dialogChild);
 
-    return new Dialog(child: dialogChild);
+    return new Dialog(child: dialogChild, insetPadding: insetPadding,);
   }
 }
